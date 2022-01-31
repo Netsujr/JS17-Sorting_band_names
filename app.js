@@ -8,14 +8,6 @@ function strip(bandName) {
 }
 
 
-const sortedBands = bands.sort(
-  function(a, b) {
-    if (a > b) {
-      return 1;
-    } else if (a < b) {
-      return -1;
-    } else {
-      return 0;
-    }
-  }
-);
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+
+console.log(sortedBands);
